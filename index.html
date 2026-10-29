@@ -29,21 +29,21 @@
     document.querySelectorAll('.toggle button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.toggle button').forEach(x=>x.classList.remove('active'));b.classList.add('active');mode=b.dataset.mode;render()});render();
     const expected='survey-q4-2026',gate=document.getElementById('gate'),input=document.getElementById('password');function open(){if(input.value===expected){gate.classList.add('hidden');sessionStorage.setItem('designQ4','1')}else document.getElementById('error').textContent='That password does not match.'}if(sessionStorage.getItem('designQ4')==='1')gate.classList.add('hidden');document.getElementById('unlock').onclick=open;input.addEventListener('keydown',e=>{if(e.key==='Enter')open()});
     const overviewRows=[
-      ['Quality expectations',71],['Capacity & workload',null],['Planning & prioritisation',null],['Ownership & decision-making',78],['UX bugs & debt tracking',74],['Cross-functional collaboration',85],['Testing & validation',73],['Design system',54],['Access to user insights',null]
+      ['Ownership & decision-making',78],['Cross-functional collaboration',85],['Designer & researcher collaboration',42],['Design reviews & crits',23],['Figma setup & structure',47],['Documentation',66],['Design system',54],['Handoff to Engineering',57],['Testing & validation',73],['UX bugs & debt tracking',74],['Quality expectations',71],['Planning & prioritisation',null],['Cross-team visibility',null],['Capacity & workload',null],['Access to user insights',null]
     ];
     const overviewGroups={
-      'All respondents':{n:32,v:[[80,30,30],[77,32,31],[72,34,32],[69,31,32],[68,24,25],[66,19,32],[63,8,24],[61,9,23],[58,19,31]]},
-      'Under 6 months':{n:5,v:[[60,0,5],[60,0,5],[60,20,5],[20,0,5],[25,25,4],[20,0,5],[75,0,4],[75,0,4],[60,20,5]]},
-      '6–12 months':{n:5,v:[[80,0,5],[80,40,5],[80,60,5],[80,25,5],[100,25,4],[80,20,5],[75,0,4],[75,0,4],[50,0,4]]},
-      'Over a year':{n:22,v:[[85,45,20],[81,38,21],[73,36,22],[77,32,22],[71,24,17],[73,23,22],[56,13,16],[53,13,15],[59,23,22]]},
-      'Ridehailing':{n:11,v:[[91,18,11],[91,36,11],[91,27,11],[73,45,11],[83,33,6],[82,18,11],[71,0,7],[67,0,6],[60,10,10]]},
-      'Delivery':{n:8,v:[[83,17,6],[57,29,7],[63,25,8],[75,25,8],[71,29,7],[38,0,8],[43,0,7],[43,14,7],[38,38,8]]},
-      'Other / horizontal':{n:10,v:[[80,50,10],[90,30,10],[70,60,10],[70,30,10],[67,22,9],[70,40,10],[71,29,7],[100,14,7],[80,20,10]]},
-      'Product / visual design':{n:19,v:[[78,22,18],[67,33,18],[58,37,19],[58,32,19],[67,22,18],[58,21,19],[53,6,17],[68,5,19],[53,26,19]]},
-      'Research & ReOps':{n:7,v:[[83,0,6],[86,14,7],[86,0,7],[86,29,7],[0,0,1],[71,0,7],[50,0,2],[null,null,0],[67,0,6]]},
-      'Design System':{n:3,v:[[100,100,3],[100,0,3],[100,100,3],[100,67,3],[100,33,3],[100,67,3],[100,50,2],[100,100,1],[67,0,3]]},
-      'Content Design':{n:3,v:[[67,67,3],[100,100,3],[100,33,3],[67,0,3],[67,33,3],[67,0,3],[100,0,3],[0,0,3],[67,33,3]]},
-      'Rentals':{n:3,v:[[33,33,3],[33,33,3],[33,0,3],[33,0,3],[33,0,3],[67,0,3],[67,0,3],[0,0,3],[33,0,3]]}
+      'All respondents':{n:32,v:[[69,31,32],[66,19,32],[41,16,32],[27,0,26],[42,12,26],[52,17,29],[61,9,23],[52,8,25],[63,8,24],[68,24,25],[80,30,30],[72,34,32],[50,25,32],[77,32,31],[58,19,31]]},
+      'Under 6 months':{n:5,v:[[20,0,5],[20,0,5],[40,0,5],[20,0,5],[50,0,4],[60,20,5],[75,0,4],[25,0,4],[75,0,4],[25,25,4],[60,0,5],[60,20,5],[60,20,5],[60,0,5],[60,20,5]]},
+      '6–12 months':{n:5,v:[[80,60,5],[80,20,5],[20,0,5],[25,0,4],[25,25,4],[75,25,4],[75,0,4],[75,25,4],[75,0,4],[100,25,4],[80,0,5],[80,40,5],[20,0,5],[80,40,5],[50,0,4]]},
+      'Over a year':{n:22,v:[[77,32,22],[73,23,22],[45,23,22],[29,0,17],[44,11,18],[45,15,20],[53,13,15],[53,6,17],[56,13,16],[71,24,17],[85,45,20],[73,36,22],[55,32,22],[81,38,21],[59,23,22]]},
+      'Ridehailing':{n:11,v:[[73,45,11],[82,18,11],[18,0,11],[29,0,7],[50,17,6],[78,33,9],[67,0,6],[83,17,6],[71,0,7],[83,33,6],[91,18,11],[91,27,11],[55,9,11],[91,36,11],[60,10,10]]},
+      'Delivery':{n:8,v:[[75,25,8],[38,0,8],[25,0,8],[14,0,7],[14,0,7],[25,0,8],[43,14,7],[29,0,7],[43,0,7],[71,29,7],[83,17,6],[63,25,8],[25,13,8],[57,29,7],[38,38,8]]},
+      'Other / horizontal':{n:10,v:[[70,30,10],[70,40,10],[70,40,10],[44,0,9],[60,10,10],[67,22,9],[100,14,7],[67,11,9],[71,29,7],[67,22,9],[80,50,10],[70,60,10],[80,60,10],[90,30,10],[80,20,10]]},
+      'Product / visual design':{n:19,v:[[58,32,19],[58,21,19],[42,16,19],[26,0,19],[37,5,19],[47,16,19],[68,5,19],[53,11,19],[53,6,17],[67,22,18],[78,22,18],[58,37,19],[42,26,19],[67,33,18],[53,26,19]]},
+      'Research & ReOps':{n:7,v:[[86,29,7],[71,0,7],[29,0,7],[0,0,1],[0,0,1],[80,20,5],[null,null,0],[null,null,0],[50,0,2],[0,0,1],[83,0,6],[86,0,7],[57,0,7],[86,14,7],[67,0,6]]},
+      'Design System':{n:3,v:[[100,67,3],[100,67,3],[67,67,3],[67,0,3],[100,33,3],[50,50,2],[100,100,1],[67,0,3],[100,50,2],[100,33,3],[100,100,3],[100,100,3],[100,100,3],[100,0,3],[67,0,3]]},
+      'Content Design':{n:3,v:[[67,0,3],[67,0,3],[33,0,3],[0,0,3],[33,33,3],[33,0,3],[0,0,3],[33,0,3],[100,0,3],[67,33,3],[67,67,3],[100,33,3],[33,0,3],[100,100,3],[67,33,3]]},
+      'Rentals':{n:3,v:[[33,0,3],[67,0,3],[67,33,3],[0,0,3],[33,33,3],[0,0,3],[0,0,3],[0,0,3],[67,0,3],[33,0,3],[33,33,3],[33,0,3],[0,0,3],[33,33,3],[33,0,3]]}
     };
     let overviewGroup='All respondents',threshold='m';const select=document.getElementById('groupSelect'),list=document.getElementById('frictionList'),heat=document.getElementById('heatmap');
     Object.entries(overviewGroups).forEach(([name,{n}])=>select.insertAdjacentHTML('beforeend',`<option value="${name}">${name} · n=${n}</option>`));
